@@ -25,7 +25,7 @@ fn main() {
 
     // Load ch8 cartridge file into CPU ram
     let args: Vec<String> = env::args().collect();
-    let cart_path = if args.len() > 1 {Path::new(&args[1])} else {Path::new("/hdd/Documents/Programming/Rust/rust_chip/carts/test_opcode.ch8")};
+    let cart_path = if args.len() > 1 {Path::new(&args[1])} else {Path::new("./carts/test_opcode.ch8")};
     match c.read_program(cart_path) {
         Ok(_) => println!("Loaded cartidge into RAM"),
         Err(_) => panic!("Could not open cartridge file!"),
